@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "source": "startup_generator",
+    "generated_from": "output/projects/ZKBL/profile.json",
+    "notes": "Field names and values match Surge Discovery create form (Full Mode, 9 steps)"
+  },
+  "project_name": "ZKBL",
+  "tagline": "Zero-knowledge audit trails for BNB Smart Chain — prove compliance without exposing business logic.",
+  "full_description": "ZKBL lets BNB Smart Chain protocols satisfy institutional audit requirements by replacing raw privileged-event logs with Groth16 ZK proof receipts stored in an on-chain registry contract. When a BEP-20 mint, ownership transfer, or BEP-177 governance execution fires, ZKBL's Node.js proof server compiles the event against user-defined YAML policy rules — multisig thresholds, timelock durations, caller allowlists — and posts a verifiable compliance receipt to BSC instead of the raw calldata",
+  "category": "AI Agents & Automation",
+  "stage": "MVP",
+  "logo": {
+    "local_path": "/Users/aliev_murat/Documents/Claude/Projects/SURGE/startup-generator/output/projects/ZKBL/logo.svg",
+    "url": "https://github.com/AllievMuro/zkbl/raw/main/logo.svg",
+    "format": "svg",
+    "note": "Surge requires PNG or JPG. Convert SVG → PNG before upload."
+  },
+  "ai_tools": [
+    "Cursor",
+    "Claude Code",
+    "GitHub Copilot"
+  ],
+  "tech_stack": {
+    "languages": [
+      "Solidity 0.8.x (on-chain registry and verifier contracts)"
+    ],
+    "dev_tools": [
+      "Circom 2.x (circuit authoring)",
+      "SnarkJS (Groth16 proof generation and verification)",
+      "BNB Smart Chain / BSC RPC",
+      "BEP-20 and BEP-177 event hooks",
+      "Hardhat plugin (ethers.js v6)",
+      "Foundry forge scripting",
+      "Node.js 20 (proof generation server)",
+      "IPFS / Pinata (circuit artifact and proving key pinning)",
+      "YAML policy DSL compiler (custom Node.js)"
+    ]
+  },
+  "pitch_deck": {
+    "local_path": "/Users/aliev_murat/Documents/Claude/Projects/SURGE/startup-generator/output/projects/ZKBL/pitch_deck.pptx",
+    "url": "https://github.com/AllievMuro/zkbl/raw/main/pitch_deck.pptx",
+    "format": "pptx",
+    "note": "Surge requires PDF. Convert PPTX → PDF before upload."
+  },
+  "whitepaper": {
+    "local_path": "",
+    "url": ""
+  },
+  "pitch_video": {
+    "url": "",
+    "source": "youtube",
+    "note": "Must be public/unlisted YouTube URL. Max 800 seconds."
+  },
+  "links": {
+    "website": "https://AllievMuro.github.io/zkbl",
+    "github": "https://github.com/AllievMuro/zkbl",
+    "telegram": "",
+    "x_twitter": ""
+  },
+  "team_description": "The founding team combines a smart contract security engineer with prior audit experience at a BSC-focused firm and a cryptography engineer who has shipped Circom circuits for production ZK applications. Together they have hands-on experience across Solidity security, ZK proof system integration, and developer tooling for EVM-compatible chains.",
+  "team_members": [],
+  "roadmap": [
+    {
+      "quarter": "Q1 2026",
+      "status": "Completed",
+      "goal": "Ship a functional MVP covering core Groth16 circuit compilation and on-chain registry for BEP-20 privileged events.",
+      "deliverables": [
+        "YAML-to-Circom compiler supporting multisig threshold, timelock, and allowlist policy rules with end-to-end Groth16 proof generation via SnarkJS",
+        "Solidity 0.8.x registry contract deployed on BSC testnet that accepts and stores proof receipts bound to BNB block hash and per-event nonce",
+        "Hardhat SDK plugin (npm package) enabling one-line instrumentation of existing deploy scripts to emit compliance receipts alongside BEP-20 mint and ownership transfer transactions"
+      ]
+    },
+    {
+      "quarter": "Q2 2026",
+      "status": "In Progress",
+      "goal": "Extend coverage to BEP-177 governance events, ship the Foundry plugin, and launch the read-only auditor portal on BSC mainnet.",
+      "deliverables": [
+        "Circom circuit templates for BEP-177 governance execution events including proposal ID binding and quorum threshold verification",
+        "Foundry forge scripting plugin published to the Foundry registry with parity feature coverage to the Hardhat plugin",
+        "Read-only auditor web portal (Next.js, wagmi) allowing institutional auditors to query the BSC mainnet registry by contract address and verify proof receipts against live on-chain state without wallet connection"
+      ]
+    },
+    {
+      "quarter": "Q3 2026",
+      "status": "Upcoming",
+      "goal": "Onboard three paying protocol teams to mainnet, harden proof server reliability, and add IPFS-pinned circuit artifact versioning for long-term audit reproducibility.",
+      "deliverables": [
+        "Production proof generation server with job queue (BullMQ + Redis), retry logic, and sub-30-second end-to-end proof latency benchmarked on BEP-20 mint circuits",
+        "IPFS circuit artifact registry storing versioned proving keys and WASM binaries via Pinata, with on-chain content-hash anchoring so auditors can reproduce any historical proof independently",
+        "Three signed mainnet integrations with BNB Chain protocol teams (at least one RWA platform) generating live compliance receipts, with case-study documentation published for TradFi partner due diligence use"
+      ]
+    }
+  ],
+  "revenue_sources": {
+    "stripe": null,
+    "paypal": null,
+    "shopify": null
+  },
+  "user_data": {
+    "google_analytics": null,
+    "mixpanel": null
+  },
+  "publish_readiness": {
+    "required": {
+      "logo": true,
+      "project_name": true,
+      "tagline": true,
+      "category": true,
+      "full_description": true,
+      "team": true,
+      "pitch_deck": true,
+      "pitch_video": false
+    },
+    "optional": {
+      "tech_stack": true,
+      "roadmap": true,
+      "socials": true,
+      "revenue_sources": false,
+      "user_data": false
+    },
+    "summary": "Required: 7/8, Optional: 3/5"
+  }
+}
